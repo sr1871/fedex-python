@@ -207,7 +207,7 @@ class Commodity(base.BaseComponent):
     #Doc: Unit of mesure.
     quantity_units:Optional[str]
     #Doc: Aditional quantitive information.
-    additional_measures:Optiona[enums.MeasureEnum]
+    additional_measures:Optional[enums.MeasureEnum]
     #Doc: Custom value for each commodity in the shipment.
     unit_price:Money
     #Doc:Total custom value for this line item.
