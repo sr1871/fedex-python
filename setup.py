@@ -14,7 +14,6 @@
 import setuptools
 
 # Project libs
-from fedex_python import VERSION
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
@@ -32,17 +31,20 @@ from fedex_python import VERSION
 # -----------------------------------------------------------------------------
 with open("README.md", "r") as fh:
     long_description = fh.read()
+    print(long_description)
 
 setuptools.setup(
     name='fedex-python',
-    version=VERSION,
+    version='0.0.5',
     description='NOT official module for use fedex web services with python',
+    description_content_type="text/plain",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/sr1871/fedex-python",
     author='Sergio Alvarado',
     author_email='sergioal18v@gmail.com',
     packages=setuptools.find_packages(),
+    install_requires=['zeep>=3.4.0', 'pydantic>=1.6.1'],
     package_data={'fedex_python': ['wsdl/*.wsdl', 'wsdl/test/*.wsdl']},
     keywords=['FedEx', 'python'],
     classifiers=[
@@ -50,5 +52,4 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=['pydantic', 'zeep']
 )
