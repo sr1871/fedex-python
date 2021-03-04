@@ -484,6 +484,16 @@ class DeletionControlEnum(str, Enum):
     DELETE_ONE_PACKAGE = "DELETE_ONE_PACKAGE"
     LEGACY = "LEGACY"
 
+class CommodityPurposeTypeEnum(str, Enum):
+    """Used for calculation of duties and taxes."""
+    BUSINESS = 'BUSINESS'
+    CONSUMER = 'CONSUMER'
+
+class MeasureEnum(str, Enum):
+    """Measure type."""
+    QUANTITY = 'QUANTITY'
+    UNITS = 'UNITS'
+
 # -----------------------------------------------------------------------------
 # Functions
 # -----------------------------------------------------------------------------

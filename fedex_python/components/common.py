@@ -101,6 +101,13 @@ class Dimensions(base.BaseComponent):
     #Doc Linear unit.
     units:enums.LinearUnits
 
+class Money(base.BaseComponent):
+    """All about money and prices."""
+    #Doc: Currency FedEx code.
+    currenncy:enums.CurrencyCodeEnum
+    #Doc: Value in the indicated currency.
+    amount:int
+
 class Payor(base.BaseComponent):
     """Payor for ship."""
     #Doc: Data for responsible party.
@@ -171,6 +178,53 @@ class TrackingId(base.BaseComponent):
     usps_application_id:Optional[str]
     #Doc: Tracking number
     tracking_number:str
+
+class EdtExciseCondition(base.BaseComponent):
+    """Additional information fo duties and taxes."""
+    #Doc: Category.
+    category:str
+    #Doc: Value.
+    value:str
+
+class Commodity(base.BaseComponent):
+    """Commodity data."""
+    #Doc: FedEx internal commodity identifier.
+    name:Optional[str]
+    #Doc: Number of pieces.
+    number_of_pieces:int
+    #Doc:A description of the commodity, which could be used for customs clearance documentation.
+    description:str
+    #Doc: Field used for calculation of duties and taxes.
+    purpose:enums.CommodityPurposeTypeEnum
+    #Doc: Code of country in wich commodity contents were produced.
+    country_of_manufacture:str
+    #Doc: To expedite customs clearence.
+    harmonized_code:str
+    #Doc: Total weight of this commodity.
+    weight:Weight
+    #Doc: Total quantity of an individual commodity.
+    quantity:int
+    #Doc: Unit of mesure.
+    quantity_units:Optional[str]
+    #Doc: Aditional quantitive information.
+    additional_measures:Optiona[enums.MeasureEnum]
+    #Doc: Custom value for each commodity in the shipment.
+    unit_price:Money
+    #Doc:Total custom value for this line item.
+    customs_value:Money
+    #Doc:Additional characteristics of the commodity used to calculate duties and taxes.
+    exiseConditions:Optional[EdtExciseCondition]
+    #Doc: To expedite customs clarance.
+    export_license_number:Optional[str]
+    #Doc: License expiration date.
+    export_license_expiration_date:Optional[str]
+    #Doc: An identifying mark or number used on the package.
+    c_i_mark_and_numbers:Optional[str]
+    #Doc: The part number of the commodity.
+    part_number:Optional[str]
+
+
+
 
 
 # -----------------------------------------------------------------------------

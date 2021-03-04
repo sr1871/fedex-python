@@ -35,7 +35,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='fedex-python',
-    version='0.0.5',
+    version='0.0.6',
     description='NOT official module for use fedex web services with python',
     description_content_type="text/plain",
     long_description=long_description,
